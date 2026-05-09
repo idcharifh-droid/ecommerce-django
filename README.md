@@ -42,20 +42,3 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## Captures d’écran
-
-### Page de connexion
-
-![Login](screens/login.png)
-
-### Liste des produits
-
-![Products](screens/products.png)
-
-### Panier
-
-![Cart](screens/cart.png)
-
-### Historique des commandes
-
-![Orders](screens/orders.png)
