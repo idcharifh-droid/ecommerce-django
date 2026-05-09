@@ -1,0 +1,45 @@
+{% extends 'products/layout.html' %}
+
+{% block content %}
+
+<h1 class="mb-5 text-center">
+    Historique des commandes
+</h1>
+
+<table class="table table-bordered shadow">
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Date</th>
+
+            <th>Total</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for order in orders %}
+
+        <tr>
+
+            <td>{{ order.id }}</td>
+
+            <td>{{ order.created_at }}</td>
+
+            <td>{{ order.total }} DH</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

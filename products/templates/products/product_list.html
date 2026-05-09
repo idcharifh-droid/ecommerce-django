@@ -1,0 +1,48 @@
+{% extends 'products/layout.html' %}
+
+{% block title %}
+Liste de produits
+{% endblock %}
+
+{% block content %}
+
+<ul>
+
+    {% for p in products %}
+
+    <li>
+
+        {{ p.name }}
+
+        <br>
+
+        {{ p.price }}
+
+        <br>
+
+        {{ p.description }}
+
+        <br>
+
+        {% if p.image %}
+
+        <img src="{{ p.image.url }}"
+             width="150">
+
+        {% endif %}
+
+        <br><br>
+
+        <a href="{% url 'product_detail' p.id %}">
+            Détails
+        </a>
+
+        <hr>
+
+    </li>
+
+    {% endfor %}
+
+</ul>
+
+{% endblock %}

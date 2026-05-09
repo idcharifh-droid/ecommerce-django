@@ -1,0 +1,66 @@
+{% extends 'products/layout.html' %}
+
+{% block content %}
+
+<h1 class="mb-5 text-center">
+    Mon Panier
+</h1>
+
+{% if cart_items %}
+
+<table class="table table-striped shadow">
+
+    <thead class="table-dark">
+
+        <tr>
+            <th>Produit</th>
+            <th>Quantité</th>
+            <th>Prix</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for item in cart_items %}
+
+        <tr>
+
+            <td>{{ item.product.name }}</td>
+
+            <td>{{ item.quantity }}</td>
+
+            <td>{{ item.total_price }} DH</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+<div class="text-end">
+
+    <h3>Total : {{ total }} DH</h3>
+
+    <a href="{% url 'place_order' %}"
+       class="btn btn-success btn-lg mt-3">
+
+        Passer commande
+
+    </a>
+
+</div>
+
+{% else %}
+
+<div class="alert alert-warning">
+
+    Votre panier est vide.
+
+</div>
+
+{% endif %}
+
+{% endblock %}

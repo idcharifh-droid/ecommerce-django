@@ -1,0 +1,59 @@
+{% extends 'products/layout.html' %}
+
+{% block title %}
+Connexion
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-5">
+
+        <div class="card shadow-lg p-4">
+
+            <h2 class="text-center mb-4">
+                Connexion
+            </h2>
+
+            <form method="post">
+
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <div class="d-grid">
+
+                    <button class="btn btn-dark">
+                        Se connecter
+                    </button>
+
+                </div>
+
+            </form>
+
+            <hr>
+
+            <div class="text-center">
+
+                <a href="{% url 'password_reset' %}">
+                    Mot de passe oublié ?
+                </a>
+
+            </div>
+
+            <div class="text-center mt-3">
+
+                <a href="{% url 'signup' %}">
+                    Créer un compte
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
